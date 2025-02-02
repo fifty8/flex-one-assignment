@@ -30,7 +30,7 @@ To execute the script:
 
 1. Make sure you are at the repository's root directory
 
-2. Check that the directory `dest` exists (I used an empty file `.gitkeep` so it should be there automatically upon Git clone)
+2. Check that the directory `dest` exists
 
 3. Run this command (assuming the executable is `python3`):
 
@@ -59,3 +59,5 @@ There may be more considerations before we can load the data in the database:
 - Some accounts have missing Account ID. This may be expected as it only seems to happen to accounts with fixed names ("ASSETS", "Current Liabilities", etc.)
 
 - Some accounts have an Account ID that doesn't follow UUID-4 format. For example, "Settle Loans Payable" has ID `220`. Again, this may be expected given certain business context.
+
+- I included a SQL–based validation script in `outtakes/validate_accounts.sql`. This is assuming all accounts are loaded into a table. The script assumes valid Account ID for all accounts. For each account that has children, the script compares the account's value against the total of the immediate children. It then flags accounts with issues. 
