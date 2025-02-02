@@ -2,7 +2,7 @@
 
 ## Question 1: ERD on the account data
 
-Please find the ERD in `account_data_erd.pdf` in the root directory.
+Please find the ERD in `account_data_erd.jpeg` in the root directory.
 
 With the information given to me, I think it's a sensible approach to have an _Account_ entity, and an implied _Entity_ entity (a company, a user, a coporation, etc.). Both entities should become a respective table in a relational database world. They shall have these relationships:
 
